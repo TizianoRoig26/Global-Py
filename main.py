@@ -25,7 +25,7 @@ def ingresar_matriz_adn():
 matriz_adn = [''.join(random.choice(['A', 'T', 'C', 'G']) for _ in range(6)) for _ in range(6)]
 nombre_matriz = 'Matriz 1'
 detector_adn = Detector(matriz_adn, nombre_matriz)
-#Smutador = Mutador(matriz_adn, nombre_matriz, detector_adn.detectar_mutantes())
-booleano, Mutacion = detector_adn.detectar_mutantes()
+Smutador = Mutador(matriz_adn, nombre_matriz, detector_adn.detectar_mutantes())
+booleano, ubicacion, Mutacion = detector_adn.detectar_mutantes()
 print_Matriz(matriz_adn)
-print(booleano, Mutacion)
+print(booleano, ubicacion, Mutacion)
