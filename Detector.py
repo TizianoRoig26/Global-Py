@@ -2,25 +2,13 @@ class Detector:
     def __init__(self, matriz, nombre_matriz):
         self.matriz = matriz
         self.nombre_matriz = nombre_matriz
+        self.base_nitrogenada = ""
 
     def detectar_mutantes(self):
         mutante = []
         j = 0
         Mutacion = []
-        #mutantes diagonales
-        diagonal1, diagonal2 = self.extraer_diagonales()
-        print("Diagonales: ")
-        print(diagonal1, " - ", diagonal2, "\n")
-        if self.hay_mutacion(diagonal1):
-            #print(f'Mutación en una diagonal')
-            mutante.append('Diagonal 1')
-            Mutacion.apend(diagonal1)
-        if self.hay_mutacion(diagonal2):
-            #print(f'Mutación en la fila {i + 1}')
-            mutante.append('Diagonal')
-            Mutacion.append(diagonal2)
-                
-        #mutantes horizontales
+    
         for i, fila in enumerate(self.matriz):
             if self.hay_mutacion(fila):
                 #print(f'Mutación en la fila {i + 1}')
@@ -42,12 +30,36 @@ class Detector:
     def hay_mutacion(self, secuencia):
         return secuencia.count('A') >= 4 or secuencia.count('T') >= 4 or secuencia.count('C') >= 4 or secuencia.count('G') >= 4
             
-    def extraer_diagonales(self):
-        diagonal1 = ""
-        diagonal2 = ""
-        for i in range(len(self.matriz)):
-            diagonal1 += (self.matriz[i][i])
-        for i in range(len(self.matriz)):
-            diagonal2 += (self.matriz[i][len(self.matriz) - 1 - i])  
-        return diagonal1, diagonal2
+    
+    def detectar_mutacion_diagonal(self):
+        filas = len(self.matriz)
+        columnas = len(self.matriz[0])
+        base_nitrogenada = ""
+        # Diagonal de izquierda a derecha 
+        for i in range(filas):
+            for j in range(columnas):
+                if i + 3 < filas and j + 3 < columnas:
+                    if (self.matriz[i][j] == self.matriz[i + 1][j + 1] == self.matriz[i + 2][j + 2] == self.matriz[i + 3][j + 3]):
+                        self.base_nitrogenada = self.matriz[i][j]
+                        
+
+        # Diagonal de derecha a izquierda
+        for i in range(filas):
+            for j in range(columnas):
+                if i + 3 < filas and j - 3 >= 0:  
+                    if (self.matriz[i][j] == self.matriz[i + 1][j - 1] == self.matriz[i + 2][j - 2] == self.matriz[i + 3][j - 3]):
+                        self.base_nitrogenada = self.matriz[i][j]
+                        
         
+        if self.base_nitrogenada == 'A':
+    
+                return print(f'Mutación de Adenina en una diagonal')
+        elif self.base_nitrogenada == 'T':
+                return print(f'Mutación de Timina en una diagonal')
+        elif self.base_nitrogenada == 'C':
+                return print(f'Mutación de Citosina en una diagonal')
+        elif self.base_nitrogenada == 'G':
+                return print(f'Mutación de Guanina en una diagonal')        
+        else: print("ALgo anda mal")    
+        return False
+
