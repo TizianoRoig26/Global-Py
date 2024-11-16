@@ -8,8 +8,8 @@ class Radiacion(Mutador):
         self.coordenada_columna = 0
         self.orientacion_muatcion = 0    
 
-    # Validacion de datos de entrada
-    def validacion_datos(self):
+    
+    def __validacion_datos(self):
 
         # Validacion de la coordenada de la fila
         while True:  
@@ -65,8 +65,10 @@ class Radiacion(Mutador):
             except ValueError:
                 print("Error: Debes ingresar un número entero.")
 
-        self.coordenada_fila, self.coordenada_columna = self.validacion_datos()
+        # Llamamos al método validacion_datos para solicitar al usuario que ingrese las coordenadas
+        self.coordenada_fila, self.coordenada_columna = self.__validacion_datos()
 
+        # Según la orientacion, se llama a los métodos privados para realizar la mutación
         if self.orientacion_muatcion == 1:
             self.matriz = self.__mutador_vertical(self.coordenada_fila, self.coordenada_columna, self.base_nitrogenada)
         else:
