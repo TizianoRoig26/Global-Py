@@ -1,0 +1,19 @@
+CLASE RADIACIÓN
+
+Metodos:
+
+Constructor:	hereda los atributos de la clase Padre Mutador (matriz y base_nitrogenada que indica la base que va a mutar el ADN).
+coordenada_fila y coordenada_columna para almacenar las coordenadas donde va a comenzar la mutacion.
+		
+crear_mutante:	    clase pública donde se le solicita al usuario que ingrese la orientación para realizar la mutación (horizontal o vertical y es checkeado con bloques try-catch), además se llama al etodo validacion_datos la cuál retorna los valores de las coordenadas de fila y columna.
+Luego según la orientacion de la mutación se llama a los métodos __muatdor_horizontal o __muatdor_vertical según corresponda
+
+validacion_datos:	clase pública que valida los datos ingresados por el usuario utilizando bucles while, condicionales if y bloques try-catch.
+Le solicita al usuario ingresar las coordenadas donde comienza la mutación (coordenada_fila y coordenada_columna)
+Retorna "self.coordenada_fila, self.coordenada_columna"
+
+__muatdor_horizontal:	    método privado el cuál realiza la mutación del ADN en forma horizontal. Esto lo hace a traves de slicing de listas.
+Retorna la matriz modificada e imprime en pantalla la misma.
+
+__muatdor_vertical:	   método privado el cuál realiza la mutación del ADN en forma vertical. Esto lo hace a traves de slicing de listas.
+Retorna la matriz modificada e imprime en pantalla la misma.
