@@ -20,12 +20,19 @@ def ingresar_matriz_adn():
             else:
                 print("Entrada invalida. Asegurate de que la fila tenga exactamente 6 caracteres (A, T, C, G)")
     return matriz_adn
-#matriz_adn = ingresar_matriz_adn() 
 
 matriz_adn = [''.join(random.choice(['A', 'T', 'C', 'G']) for _ in range(6)) for _ in range(6)]
 nombre_matriz = 'Matriz 1'
-detector_adn = Detector(matriz_adn, nombre_matriz)
-Smutador = Mutador(matriz_adn, nombre_matriz, detector_adn.detectar_mutantes())
-booleano, ubicacion, Mutacion = detector_adn.detectar_mutantes()
+#matriz_adn = ingresar_matriz_adn() 
 print_Matriz(matriz_adn)
-print(booleano, ubicacion, Mutacion)
+detector_adn = Detector(matriz_adn, nombre_matriz)
+booleano, ubicacion, Mutacion, base = detector_adn.detectar_mutantes()
+
+if booleano == True:  # Si el primer valor es True, hay mutantes
+    print("Mutantes detectados:")
+    print("Ubicaciones:", ubicacion)
+    print("Mutaciones:", Mutacion)
+    print("Bases predominantes:", base)
+else:
+    print("No se detectaron mutantes.")
+
