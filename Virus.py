@@ -1,5 +1,4 @@
 from Mutador import Mutador
-from Radiacion import Radiacion
 
 class Virus(Mutador):
 
@@ -92,6 +91,7 @@ class Virus(Mutador):
 
         lista_cadena=[''.join(lista_cadena[i:i+6]) for i in range(0, len(lista_cadena), 6)]
         
+        print(f"ADN mutado diagonalente desde la coordenada ({self.coordenada_fila}, {self.coordenada_columna})\n")
         for elemento in lista_cadena:
             print("|",elemento,"|")
 
@@ -116,6 +116,7 @@ class Virus(Mutador):
 
         lista_cadena=[''.join(lista_cadena[i:i+6]) for i in range(0, len(lista_cadena), 6)]
         
+        print(f"ADN mutado diagonalente desde la coordenada ({self.coordenada_fila}, {self.coordenada_columna})\n")
         for elemento in lista_cadena:
             print("|",elemento,"|")
 

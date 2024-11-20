@@ -95,7 +95,7 @@ class Radiacion(Mutador):
         # vuelve a unir los caracteres en sus correspondientes cadenas
         lista_cadena=[''.join(lista_cadena[i:i+6]) for i in range(0, len(lista_cadena), 6)] # Con el metodo join unimos los caraccteres, tomamos tramos de 6 caracteres y los agregamos a la lista
 
-        
+        print(f"ADN mutado horizontalmente desde la coordenada ({self.coordenada_fila}, {self.coordenada_columna})\n")
         for elemento in lista_cadena:
             print("|",elemento,"|")
 
@@ -120,6 +120,7 @@ class Radiacion(Mutador):
 
         lista_cadena=[''.join(lista_cadena[i:i+6]) for i in range(0, len(lista_cadena), 6)]
         
+        print(f"ADN mutado verticalmente desde la coordenada ({self.coordenada_fila}, {self.coordenada_columna})\n")
         for elemento in lista_cadena:
             print("|",elemento,"|")
 
