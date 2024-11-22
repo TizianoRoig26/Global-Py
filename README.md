@@ -36,7 +36,7 @@ Funcionalidades
 ## Descripción
 
 
-Este script en Python define una clase llamada `Sanador` que se utiliza para sanar mutaciones en una matriz de ADN. La matriz de ADN es una lista de cadenas de caracteres que representan las bases del ADN (A, T, C, G). La clase `Sanador` tiene métodos para corregir mutaciones en filas, columnas y diagonales de la matriz de ADN.
+Se define la clase `Sanador` que se utiliza para sanar mutaciones en una matriz de ADN. La matriz de ADN es una lista de cadenas de caracteres que representan las bases del ADN (A, T, C, G). La clase `Sanador` tiene métodos para corregir mutaciones en filas, columnas y diagonales de la matriz de ADN.
 
 
 ## Funciones Principales
