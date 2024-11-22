@@ -1,9 +1,0 @@
-Proyecto: Global Inegrador de Python.
-
-Descripción:
-Esta clase es la superclase de las subclases `Radiacion` y `Virus`. 
-Estructura del Código:
-
-1. Clase `Mutador`: Contiene atributos los cuales van a ser utilizados por el usuaario para almacenar la matriz con el ADN (matriz) y el caracter correspondiente a la base nitrogenada (base_nitrogenada) que el operador elija para realizar la mutación.
-
-- Método `crear_mutante`: Método vació el cual va a ser heredado por las subclases `Radiacion` y `Virus`.
