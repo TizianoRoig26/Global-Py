@@ -59,7 +59,7 @@ Funcionalidades
 
 Constructor:	hereda los atributos de la clase Padre Mutador (matriz y base_nitrogenada que indica la base que va a mutar el ADN).
 coordenada_fila y coordenada_columna para almacenar las coordenadas donde va a comenzar la mutacion.
-**Estructura**
+
 - Método `crear_mutante`:	clase pública donde se le solicita al usuario que ingrese la orientación para realizar la mutación (horizontal o vertical y es checkeado con bloques try-catch), además se llama al etodo validacion_datos la cuál retorna los valores de las coordenadas de fila y columna.
 Luego según la orientacion de la mutación se llama a los métodos __muatdor_horizontal o __muatdor_vertical según corresponda.
 - Método `__validacion_datos`:	clase privada que valida los datos ingresados por el usuario utilizando bucles while, condicionales if y bloques try-catch.
